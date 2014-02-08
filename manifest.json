@@ -1,8 +1,8 @@
 {
-  "name": "CHANGE THIS : Extension boilerplate",
+  "name": "Why Did I Come Here?",
   "version": "0.0.1",
   "manifest_version": 2,
-  "description": "This extension was created with the awesome extensionizr.io",
+  "description": "Find yourself going to Facebook.com to do something specific only to leave 10 minutes later dazed and confused? Waste time no more... Why Did I Come Here asks just that when you go to sites like Facebook and then it displays your answer as a banner as you browse. Sound useful? Try it out and please let me know what you think!",
   "homepage_url": "http://extensionizr.com",
   "icons": {
     "16": "icons/icon16.png",
@@ -11,28 +11,25 @@
   },
   "default_locale": "en",
   "background": {
-    "page": "src/bg/background.html",
+    // "page": "src/bg/background.html",
+    "scripts": ["src/bg/background.js"],
     "persistent": false
   },
   "permissions": [
-    "http://facebook.com/*",
-    "https://facebook.com/*"
+    "*://facebook.com/*",
+    "*://www.facebook.com/*"
   ],
   "content_scripts": [
     {
       "matches": [
-        "https://www.google.com/*"
+        "*://*.facebook.com/*"
       ],
       "css": [
         "src/inject/inject.css"
-      ]
-    },
-    {
-      "matches": [
-        "https://www.google.com/*"
       ],
       "js": [
-        "src/inject/inject.js"
+        "src/inject/inject.js",
+        "src/bg/overlay.js"
       ]
     }
   ]
