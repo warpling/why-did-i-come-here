@@ -1,0 +1,48 @@
+.white-overlay {
+    background-color: white;
+    opacity: 0.85;
+    position: fixed;
+    z-index: 4000;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+}
+
+.input-container {
+    box-sizing: border-box;
+    /*border: 1px dashed red;*/
+    width: 100%;
+    z-index: 5000;
+    position: fixed;
+    padding: 0 50px;
+    top: 50%;
+    /* Proper centering? */
+    display: box;
+    box-pack: center;
+    box-align: center;
+    display:-webkit-box;
+    -webkit-box-pack:center;
+    -webkit-box-align:center;
+}
+
+.input-field {
+    box-sizing: border-box;
+    /*border: 1px dashed blue;*/
+    background-color: transparent;
+    box-shadow: none;
+    border: 0;
+    /*padding: 0 50px;*/
+    font-size: 5em;
+    text-align: center;
+    color: black;
+
+    /*font-family: 'Helvetica neue'*/
+}
+
+.input-field:focus {
+    outline: 0;
+}

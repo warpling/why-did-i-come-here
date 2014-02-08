@@ -28,8 +28,10 @@
         "src/inject/inject.css"
       ],
       "js": [
+        "src/inject/inject.css",
         "src/inject/inject.js",
-        "src/bg/overlay.js"
+        // "src/bg/overlay.js",
+        "js/jquery/jquery.js"
       ]
     }
   ]

@@ -4,9 +4,11 @@ chrome.extension.onMessage.addListener(
   function(request, sender, sendResponse) {
   	// chrome.pageAction.show(sender.tab.id);
     // sendResponse();
-    chrome.tabs.executeScript({
-        code: 'document.body.style.color="purple"'
-    });
+    // chrome.tabs.executeScript({
+    //     code: 'document.body.style.color="purple"'
+    // });
 
-    chrome.tabs.executeScript(null, {file: "src/bg/overlay.js"});
+    chrome.tabs.executeScript(null, { file: "js/jquery/jquery.js" }, function() {
+        chrome.tabs.executeScript(null, {file: "src/bg/overlay.js"});
+    });
   });
