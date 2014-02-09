@@ -1,6 +1,7 @@
 
 // Create banner
 function addBanner(reminderText, height) {
+    bumpFacebook(height);
     var $reminderBanner = $(document.createElement('div'));
     var $reminderText   = $(document.createElement('p'));
     $reminderBanner.append($reminderText);
@@ -51,14 +52,15 @@ $('body').prepend($inputContainer);
 $inputField.focus();
 
 $inputField.keypress(function (e) {
-  if (e.which === 13) {
-    // $(inputField).submit();
-    // TODO: Is .val() proper?
-    $whiteOverlay.toggle();
-    $inputContainer.toggle();
-    console.log($inputField.val());
-    bumpFacebook(55);
-    addBanner($inputField.val(), 55);
-    return false;
-  }
+    // If return is hit...
+    if (e.which === 13) {
+        // TODO: Is .val() proper?
+        $whiteOverlay.toggle();
+        $inputContainer.toggle();
+        var message = $inputField.val();
+        if(message !== "") {
+            addBanner($inputField.val(), 55);
+        }
+        return false;
+    }
 });
