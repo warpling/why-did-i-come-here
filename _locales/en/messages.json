@@ -3,8 +3,7 @@
     Comments work here too!  Sweet, they didn't always...
     Eventually, I'd like to localize the whole extension.
     But not quite yet, as Chrome requires a reload to get new messages.json data.
-  */
-  // v---- localization tab entries ----v
+  
   "l10nTabName": {
     "message":"Localization"
     ,"description":"name of the localization tab"
@@ -69,4 +68,5 @@
     "message":"You can even set <span class='code'>data-l10n</span> on things like the &lt;title&gt; tag, which lets you have translatable page titles, or fieldset &lt;legend&gt; tags, or anywhere else - the default <span class='code'>Boil.localize()</span> behavior will check every tag in the document, not just the body."
     ,"description":"inform about places which may not be obvious, like <title>, etc"
   }
+  */
 }

@@ -1,38 +1,36 @@
 {
-  "name": "Why Did I Come Here?",
-  "version": "0.0.1",
-  "manifest_version": 2,
-  "description": "Find yourself going to Facebook.com to do something specific only to leave 10 minutes later dazed and confused? Waste time no more... Why Did I Come Here asks just that when you go to sites like Facebook and then it displays your answer as a banner as you browse. Sound useful? Try it out and please let me know what you think!",
-  "homepage_url": "http://extensionizr.com",
-  "icons": {
-    "16": "icons/icon16.png",
-    "48": "icons/icon48.png",
-    "128": "icons/icon128.png"
-  },
-  "default_locale": "en",
-  "background": {
-    // "page": "src/bg/background.html",
-    "scripts": ["src/bg/background.js"],
-    "persistent": false
-  },
-  "permissions": [
-    "*://facebook.com/*",
-    "*://www.facebook.com/*"
-  ],
-  "content_scripts": [
-    {
-      "matches": [
-        "*://*.facebook.com/*"
-      ],
-      "css": [
-        "src/inject/inject.css"
-      ],
-      "js": [
-        "src/inject/inject.css",
-        "src/inject/inject.js",
-        // "src/bg/overlay.js",
-        "js/jquery/jquery.js"
-      ]
-    }
-  ]
+	"name": "Why Did I Come Here?",
+	"version": "0.0.1",
+	"manifest_version": 2,
+	"description": "Don't let notifications and your newsfeed distract you! Keep track of why you went to Facebook in the first place!",
+	"homepage_url": "http://extensionizr.com",
+	"icons": {
+		"16": "icons/icon16.png",
+		"48": "icons/icon48.png",
+		"128": "icons/icon128.png"
+	},
+	// "default_locale": "en",
+	"background": {
+		"scripts": ["src/bg/background.js"],
+		"persistent": false
+	},
+	"permissions": [
+		"*://facebook.com/*",
+		"*://www.facebook.com/*"
+	],
+	"content_scripts": [
+		{
+			"matches": [
+				"*://*.facebook.com/*"
+			],
+			"css": [
+				"src/inject/inject.css"
+			],
+			"js": [
+				"src/inject/inject.css",
+				"src/inject/inject.js",
+				"js/jquery/jquery.js"
+			]
+		}
+	]
 }

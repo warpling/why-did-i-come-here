@@ -21,7 +21,7 @@
     z-index: 5000;
     position: fixed;
     padding: 0 50px;
-    top: 50%;
+    top: 45%;
     /* Proper centering? */
     display: box;
     box-pack: center;
@@ -32,7 +32,11 @@
 }
 
 .input-field {
-    /*border: 1px dashed blue;*/
+    /* Here be dragons */
+    position: relative;
+    float: left;
+    width: 100%;
+
     background-color: transparent;
     box-shadow: none;
     border: 0;
@@ -55,9 +59,6 @@
     position: fixed;
     top: 0;
     background-color: white;
-    font-size: 2.5em;
-    font-weight: 600;
-    overflow: hidden;
     /* Proper centering? */
     display: box;
     box-pack: center;
@@ -69,6 +70,13 @@
     transition:color .25s ease-out;
 }
 
+.reminder-banner > p {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 600;
+    overflow: hidden;
+    outline: none;
+}
 
 .reminder-banner:hover {
     color: #AAA;
@@ -76,4 +84,21 @@
 
 .reminder-banner:focus {
     outline: 0;
+}
+
+.close-button {
+    font-size: 2.5em;
+    font-family: 'Helvetica neue';
+    font-weight: 800;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    left: 20px;
+    color: #A9A9A9;
+    transition:color .25s ease-out;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: black;
 }

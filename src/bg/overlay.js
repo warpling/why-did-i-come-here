@@ -2,14 +2,26 @@
 // Create banner
 function addBanner(reminderText, height) {
     var $reminderBanner = $(document.createElement('div'));
-    $reminderBanner.attr("class", "reminder-banner box-sizing")
-                   .attr("contenteditable", "true")
-                   .css("top", "-" + height + "px")
-                   .text(reminderText);
+    var $reminderText   = $(document.createElement('p'));
+    $reminderBanner.append($reminderText);
 
+    $reminderBanner.addClass("reminder-banner box-sizing")
+                   .css("top", "-" + height + "px");
+    $reminderText.attr("contenteditable", "true")
+                 .text(reminderText);
+
+    // Close button
+    var $closeButton = $(document.createElement('div'));
+    $closeButton.addClass("close-button").text('x');
+    $closeButton.click(function() {
+        $reminderBanner.toggle();
+        $('#blueBar').css('top', '0');
+        $('._li').css('padding-top', '0');
+    })
+    $reminderBanner.prepend($closeButton);
 
     // Prevent typing of newlines
-    $reminderBanner.keypress(function(e){return e.which !== 13;});
+    $reminderText.keypress(function(e){return e.which !== 13;});
 
     $('body').prepend($reminderBanner);
     $reminderBanner.animate({'top': 0}, 200);
@@ -28,7 +40,7 @@ $('body').prepend($whiteOverlay);
 
 // Add the input container/field
 var $inputContainer = $(document.createElement('div'));
-$inputContainer.addClass("input-container");
+$inputContainer.addClass("input-container box-sizing");
 
 var $inputField = $(document.createElement('input'));
 $inputField.addClass("input-field box-sizing");
