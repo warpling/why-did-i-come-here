@@ -1,3 +1,7 @@
+.box-sizing {
+    box-sizing: border-box;
+}
+
 .white-overlay {
     background-color: white;
     opacity: 0.85;
@@ -9,11 +13,9 @@
     bottom: 0;
     left: 0;
     right: 0;
-
 }
 
 .input-container {
-    box-sizing: border-box;
     /*border: 1px dashed red;*/
     width: 100%;
     z-index: 5000;
@@ -30,7 +32,6 @@
 }
 
 .input-field {
-    box-sizing: border-box;
     /*border: 1px dashed blue;*/
     background-color: transparent;
     box-shadow: none;
@@ -44,5 +45,35 @@
 }
 
 .input-field:focus {
+    outline: 0;
+}
+
+.reminder-banner {
+    width: 100%;
+    height: 55px;
+    z-index: 5000;
+    position: fixed;
+    top: 0;
+    background-color: white;
+    font-size: 2.5em;
+    font-weight: 600;
+    overflow: hidden;
+    /* Proper centering? */
+    display: box;
+    box-pack: center;
+    box-align: center;
+    display:-webkit-box;
+    -webkit-box-pack:center;
+    -webkit-box-align:center;
+    /* Transitions */
+    transition:color .25s ease-out;
+}
+
+
+.reminder-banner:hover {
+    color: #AAA;
+}
+
+.reminder-banner:focus {
     outline: 0;
 }
